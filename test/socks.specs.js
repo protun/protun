@@ -19,6 +19,9 @@ describe('SocksServer', function(){
     before(function(){
         server = new SocksServer({port:bindPort.toString(), host:bindHost});
     });
+    after(function(){
+        server.close();
+    });
 
     describe('#listen', function(){
         it('could listen',function(done){
